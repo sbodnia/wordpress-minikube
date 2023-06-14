@@ -26,6 +26,10 @@ spec:
             secretKeyRef:
               name: mysql-secrets
               key: rootpw
+        - name: WORDPRESS_DB_USER
+          value: root
+        - name: WORDPRESS_DB_NAME
+          value: wordpress
         - name: WORDPRESS_CONFIG_EXTRA
           value: |
             define('WP_REDIS_HOST', 'redis-service');
@@ -51,3 +55,5 @@ spec:
     - port: 80
   selector:
     app: wordpress
+
+
